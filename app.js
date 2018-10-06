@@ -12,6 +12,38 @@ var express = require("express"),
     app.get("/",function(req,res){
      res.render("landing");
     });
+   
+    //intro routes
+
+    app.get("/repcare",function(req,res){
+           res.render("intro");
+        });
+ 
+    //home routes
+    app.get("/home",function(req,res){
+          res.render("home");
+        });
+    
+    //Service routes
+    app.get("/Service",function(req,res){
+      res.render("Service");
+    });
+
+    //Gallery routes
+    app.get("/Gallery",function(req,res){
+      res.render("Gallery");
+    });
+
+    //Login routes
+    app.get("/Login",function(req,res){
+      res.render("Login");
+    });
+
+    //Testimonials routes
+    app.get("/Test",function(req,res){
+      res.render("Test");
+    });
+
 
     //listening to port
     app.listen(port,function(){

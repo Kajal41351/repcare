@@ -19,3 +19,4 @@ $("body").css("background-image", imgs[counter]);
 counter++;
 }
 setInterval(changeBG,3000);
+
