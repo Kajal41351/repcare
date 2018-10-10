@@ -1,5 +1,92 @@
-.cube{
-    height:15%;
-    width: 30%;
-    border: 2px solid red;
+body{
+    background: grey;
+    transition: background 1.5s linear;
+    -webkit-backface-visibility: show;
+    -webkit-transition: background-image 1.5s linear;
+    -webkit-transform: translate3d(0,0,0);
+}
+.col-sm-4{
+    border: 1px solid grey;
+}
+a{
+    display:none;
+}
+.row .parent:hover{ 
+ opacity: 0.4;
+}
+.g3{
+    height: 50%;
+}
+.g2{
+    height: 80%;
+}
+.g1{
+    height: 60%;
+}
+.parent >.child{
+    visibility:hidden;
+}
+.parent:hover >.child{
+    visibility: visible;
+}
+.child{
+    font-weight: 700;
+    font-family: 'Basic',sans-serif;
+    font-size: 2.0em;
+    padding-left:auto;
+    padding-top:9em;
+    color: navy;
+}
+ #g1{
+    background:url('/img/g1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+} 
+#g2{
+    background-image: url('/img/g2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#g3{
+    background-image: url('/img/g3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#g4{
+    background-image: url('/img/g4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#g5{
+    background-image: url('/img/g5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#g6{
+    background-image: url('/img/g6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+#g7{
+    background-image: url('/img/g7.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: top;
+}
+#g8{
+    background-image: url('/img/g8.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+#g9{
+    background-image: url('/img/g9.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#g1 :hover{
+    opacity: 0.2;
 }

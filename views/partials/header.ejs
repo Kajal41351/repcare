@@ -10,72 +10,32 @@
           <link rel="stylesheet" href="/css/font-awesome.min.css">
           <link href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet">
           <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Basic" rel="stylesheet">
+
           <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
           <link rel="stylesheet" href="/css/responsive.css">
+          <link rel="stylesheet" href="/css/style.css">
       </head>
 <body>
-  <div class="navbar-fixed">
-  <nav class="black " style="
-            height: 5rem;
-        /* line-height: 30px */
-    ">
-    <div class="container">
+ <!--<div class="navbar"> -->
+  <nav class="bg-light navbar-light" style="height: 4rem;">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo"><span><img style="width:8rem" src="/img/h1.jpeg" alt="" width='30' height='70'></span>REPCARE</a>
-        <a class="button-collapse" data-activates="mobile-nav" href="#">
-          <i class="material-icons">menu</i>
-        </a>
-      <!--  <ul class="right hide-on-med-and-down">
-          <li>
-            <a href="/tripstring">Home</a>
-          </li>
-          <li>
-            <a href="/about">About</a>
-          </li>
-          <li>
-            <a href="#foot">Contact</a>
-          </li>
-          <li>
-            <a href="#special1">TravelPackages</a>
-          </li>
-          <li>
-            <a href="/form_mice">Mice</a>
-          </li>
-          <li>
-            <a href="#">DestinationWeddings</a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="material-icons">person</i>
-            </a>
-          </li>
-        </ul>
-        <ul class="side-nav" id="mobile-nav">
-          <li>
-            <a href="/tripstring">Home</a>
-          </li>
-          <li>
-            <a href="/views/about.ejs">About</a>
-          </li>
-          <li>
-            <a href="#foot">Contact</a>
-          </li>
-          <li>
-            <a href="#special1">TravelPackages</a>
-          </li>
-          <li>
-            <a href="/form_mice">Mice</a>
-          </li>
-          <li>
-            <a href="#">DestinationWeddings</a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="material-icons">person</i>
-            </a>
-          </li>
-        </ul>
-      -->
+         <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlay-content">
+            <a href="/home">About Us</a>
+            <a href=".home">Our Missions</a>
+            <a href="/home">Why Repcare?</a>
+            <a href="/SErvice">Services Offered</a>
+            <a href="#">Contact Us</a>
+            <a href="/Login">Login</a>
+          </div>
+        </div>
+        <span class="open" onclick="openNav()">&#9776;</span>
+        
+                    
+        
+       <span class="brand-text"><a href="/repcare">REPCARE</a></span>
     </div>
     </div>
   </nav>
@@ -98,4 +58,14 @@
 
 <script>
     $('.button-collapse').sideNav();
-</script>
+    //Navbar open/close function
+
+    function openNav() {
+      document.getElementById("myNav").style.width = "15%";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+    </script>
+
