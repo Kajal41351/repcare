@@ -5,14 +5,15 @@ body{
     -webkit-transition: background-image 1.5s linear;
     -webkit-transform: translate3d(0,0,0);
 }
-.col-sm-4{
+/* .col-sm-4{
     border: 1px solid grey;
-}
-a{
+} */
+/* a{
     display:none;
-}
-.row .parent:hover{ 
+} */
+.row .parent:hover{
  opacity: 0.4;
+ font-weight: 800;
 }
 .g3{
     height: 50%;
@@ -20,7 +21,7 @@ a{
 .g2{
     height: 80%;
 }
-.g1{
+a .g1{
     height: 60%;
 }
 .parent >.child{
@@ -37,12 +38,12 @@ a{
     padding-top:9em;
     color: navy;
 }
- #g1{
+a #g1{
     background:url('/img/g1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-} 
+}
 #g2{
     background-image: url('/img/g2.png');
     background-size: cover;
