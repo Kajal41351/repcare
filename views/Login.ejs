@@ -1,59 +1,21 @@
 <% include ./partials/header %>
 <link rel="stylesheet" href="/css/Login.css">
-
-    <div class="container" id="form">
-       <h1 class="center">Select your own package</h1>
-
-           <form action="/form" method="POST">
-             <h3>   <i class="material-icons prefix medium">account_circle</i>  Name</h3>
-             <div class="form-row">
-               <div class="col">
-               <input type="text" class="form-control" name="user[firstname]"placeholder="First name">
-               </div>
-               <div class="col">
-               <input type="text" class="form-control"  name="user[lastname]"placeholder="Last name">
-               </div>
-            </div>
-               <h3>Message</h3>
-               <div class="form-row">
-                 <div class="col">
-                 <textarea class="materialize-textarea"></textarea>
-                 </div>
-              </div>
-              <div class="input-field col s12">
-                <h3>M.I.C.E TYPE</h3>
-                <select>
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">CORPORATE EVENT</option>
-                <option value="2">CONFRENCES & SEMINAR</option>
-                <option value="3">PRODUCT LAUNCHES</option>
-                <option value="4">BRAND ACTIVATION</option>
-                <option value="5">EXHIBITIONS</option>
-                <option value="6">CORPORATE ENTERTAINMENT</option>
-                <option value="7">AWARD CEREMONIES</option>
-                <option value="8">REWARD & INCENTIVE</option>
-                <option value="9">THEME EVENTS</option>
-                <option value="10">CORPORATE PARTIES</option>
-                <option value="11">COLLEGES EVENTS</option>
-                <option value="12">SCHOOL EVENTS </option>
-                <option value="13">OTHERS</option>
-                </select>
-
-              </div>
-              <h3> Phone Number</h3>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="user[phoneno]" placeholder="name">
-                </div>
-                <h3>Email id</h3>
-                  <div class="form-group">
-                      <input class="form-control validate" type="text" name="user[email]" placeholder="name">
-                  </div>
-              <div class="form-group">
-                  <button class="btn btn-lg btn-primary btn-block">Submit Now</button>
-              </div>
-          </form>
+<div class="whole">
+    <div class="card ml-auto" id="form1">
+       <h4 class="center text">
+           <i class="fa fa-wrench prefix fa-lg px-2" ></i>REPCARE</h4>
+       <hr class="red my-1" width="100%" height="5%">
+           <form action="/form" method="POST" class="mt-3 mx-2">
+            Username: <input type="text" placeholder="John247"><br>
+            Password: <input type="password">
+            <div class="form-group">
+                <br>
+                <center><button class="btn red btn-lg">Login</button></center> 
+             </div>
+             <div class="center medium">New to Repcare??<a href="/Signup" class="link">Signup</a></div>
+         </form>     
 </div>
-
+</div>
 <script >
 $(document).ready(function() {
     $('select').material_select();

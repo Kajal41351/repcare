@@ -38,6 +38,10 @@ var express = require("express"),
     app.get("/Login",function(req,res){
       res.render("Login");
     });
+   //Signup routes
+    app.get("/Signup",function(req,res){
+      res.render("Signup");
+    });
 
     //Testimonials routes
     app.get("/Test",function(req,res){
