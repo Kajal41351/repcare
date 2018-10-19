@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    border: 1px solid black;
 }
 .whole2{
     background:linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0)),url('/img/home2.jpg');
@@ -54,18 +55,14 @@ li{
  .card{
     height: 80%;
     width:30%;
-}
-/*
+ }
+ #one{
+     background-color: #ffcc00; 
+ }
 .whole2 h2{
     color: navy;
     font-weight: 600em;
     text-decoration: underline;
-}
-lead{
-font-size: 1.25em;
-line-height: 1.25em;
-color: purple;
-text-decoration: underline;
 }
 .fa-chevron-circle-right{
     color: purple;
@@ -73,14 +70,9 @@ text-decoration: underline;
 .text{
     margin-top:50%;
     margin-bottom:1.0em;
+    font-size: 2.5em;
+    line-height: 1.25em;
+    color: purple;
+    text-decoration: underline;
+    font-weight: bold;
 }
-.red{
-    background-color:#ffcc00;
-} */
-.red {
-    background: url('http://www.tradeinterint.com/wp-content/uploads/2017/03/industrial-servicee-1.jpg'); 
-     background-repeat: no-repeat;
-     background-size: cover;
-   
-   }
-   

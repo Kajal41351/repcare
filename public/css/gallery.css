@@ -1,0 +1,14 @@
+
+.whole1{
+    background:linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0)),url('/img/gal1.png');
+    width:100%;
+    height:100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 50px solid navy;
+}
+
+.ani{
+    
+}

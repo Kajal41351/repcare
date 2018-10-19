@@ -27,6 +27,11 @@
     display: block;
     transition: 0.3s;
 }
+.overlay-content a:hover{
+    text-decoration: line-through;
+    text-decoration-color: white;
+    font-weight: bold;
+}
 
 .overlay a:hover, .overlay a:focus {
     color: #f1f1f1;
