@@ -16,7 +16,25 @@
           <link rel="stylesheet" href="/css/responsive.css">
           <link rel="stylesheet" href="/css/style.css">
       </head>
-<body>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+       
+       
+  var instance = M.Carousel.init({
+    fullWidth: true,
+    indicators: true
+  });
+
+  // Or with jQuery
+
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+    });
+</script>
+      <body>
  <!--<div class="navbar"> -->
   <nav class="bg-light navbar-light" style="height: 4rem;">
       <div class="nav-wrapper">
