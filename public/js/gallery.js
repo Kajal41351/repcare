@@ -19,4 +19,3 @@ $(".whole1").css("background-image", imgs[counter]);
 counter++;
 }
 setInterval(changeBG,2500);
-
