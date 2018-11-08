@@ -36,6 +36,16 @@
                     
         
        <span class="brand-text"><a href="/repcare">REPCARE</a></span>
+       <span class="login"> 
+        <% if(!currentUser){ %>
+           <a href="/login" class="btn teal">Login</a>
+            <a href="/signup" class="btn teal">Sign Up</a>
+        <% } else { %>
+            <a href="#" class="btn teal">Signed In As <%= currentUser.username%></a>
+            <a href="/logout" class="btn teal">Logout</a>
+        <% } %>
+   </span>
+      
     </div>
     </div>
   </nav>

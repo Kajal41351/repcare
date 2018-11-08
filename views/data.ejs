@@ -1,0 +1,31 @@
+<% include partials/header %>
+
+
+<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+    <% campgrounds.forEach(function(campground){ %>
+    <div class="col-md-3 col-sm-6">
+        <h4>
+            <%= campground.name %>
+        </h4>
+        <h4>
+            <%= campground.phone %>
+        </h4>
+        <h4>
+            <%= campground.mecname %>
+        </h4>
+        <h4>
+            <%= campground.problem %>
+        </h4>
+        <h4>
+            <%= campground.description %>
+        </h4>
+
+
+
+    </div>
+</div>
+<% }); %>
+</div>
+</div>
+
+<% include partials/footer %>
