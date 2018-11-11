@@ -12,7 +12,7 @@ function changeBG(){
     "url(/img/gal7.jpg)",
     "url(/img/gal8.png)"
   ]
-   
+
 if(counter === imgs.length) counter = 0;
 $(".whole1").css("background-image", imgs[counter]);
 

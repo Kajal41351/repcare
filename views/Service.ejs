@@ -1,6 +1,19 @@
-<% include ./partials/header %> <br /><br />
-<h1>Services Offered</h1>
+<% include ./partials/header %>
+<html>
+<head>
+    <link rel="stylesheet" href="css/Service.css">
+    <script>
+      $(document).ready(function() {
+        $('.tabs').tabs();
+      });
+    </script>
 
+</head>
+<body>
+<div class='ani'>
+<h2>Services Offered</h2>
+</div>
+<br><br>
 <div class="row">
   <div class="col s12">
     <ul class="tabs">
@@ -474,11 +487,7 @@
     </table>
   </div>
 </div>
-
-<script>
-  $(document).ready(function() {
-    $('.tabs').tabs();
-  });
-</script>
+</body>
+</html>
 
 <% include ./partials/footer %>

@@ -1,0 +1,18 @@
+
+@keyframes example {
+  0%   {left:0%;}
+   25%  {left:10%; }
+   50%  {left:20%; }
+   75%  {left:10%;}
+   100% {left:0%; }
+}
+
+.ani{
+      width: 370px;
+      height: 60px;
+      animation-name: example;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      font-style: oblique;
+      position: relative;
+}

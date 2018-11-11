@@ -1,5 +1,5 @@
 body {
-  
+
     background: url(/img/h1.jpeg);
     background-size: cover;
     background-position: center;
@@ -7,4 +7,25 @@ body {
     -webkit-backface-visibility: hidden;
     -webkit-transition: background-image 1.5s linear;
     -webkit-transform:translate3d(0,0,0);
+}
+
+@keyframes example {
+    from{top:30%;}
+     to{top:0%; }
+  }
+
+#ani{
+        width: 400px;
+        height: 100px;
+        margin-left: 30%;
+        animation-name: example;
+        animation-duration: 6s;
+        font-style:oblique;
+        position: relative;
+  }
+
+center{
+  animation-name: example;
+  animation-duration: 6s;
+  position: relative;
 }

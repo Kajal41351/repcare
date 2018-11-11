@@ -32,11 +32,11 @@
           </div>
         </div>
         <span class="open" onclick="openNav()">&#9776;</span>
-        
-                    
-        
+
+
+
        <span class="brand-text"><a href="/repcare">REPCARE</a></span>
-       <span class="login"> 
+       <span class="login">
         <% if(!currentUser){ %>
            <a href="/login" class="btn teal">Login</a>
             <a href="/signup" class="btn teal">Sign Up</a>
@@ -45,7 +45,7 @@
             <a href="/logout" class="btn teal">Logout</a>
         <% } %>
    </span>
-      
+
     </div>
     </div>
   </nav>
@@ -72,7 +72,7 @@
     function openNav() {
       document.getElementById("myNav").style.width = "15%";
     }
-    
+
     function closeNav() {
       document.getElementById("myNav").style.width = "0%";
     }

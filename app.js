@@ -84,7 +84,7 @@ app.post('/request', function(req, res) {
 //============
 
 app.get('/', function(req, res) {
-  res.render('home');
+  res.render('landing.ejs');
 });
 
 app.get('/secret', isLoggedIn, function(req, res) {
