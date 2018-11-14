@@ -1,0 +1,36 @@
+<% include ./partials/header %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mt-5">
+            <img src="<%= worker.image %>" width="100%">
+        </div>
+        <div class="col-md-6 border mt-5" style="background-color:#dfc7da">
+            <h2 style="color:#812626">
+                <strong>Name: <%=worker.name%></strong> <!this is a title>
+            </h2>
+            <p>
+                Phone No:  <u><%= worker.phone%></u><br>
+                Email:   <u><%= worker.email%></u>
+                
+            </p>
+            
+            <p>
+                Address : <br />
+                <p style="font-size:1.1rem;""><%= worker.address%></p>
+            </p>
+                
+        </div>
+    </div>
+</div>
+
+<div >
+  <div class="text-center">
+    <a class="btn btn-success" href="/worker/<%= worker._id %>/comments/new" >Add New Comment</a>
+  </div>
+
+  <div class=" mt-5 ">
+      <h3 class="text-center">Reviews</h3>
+    <iframe src="/comment" width="1600" height="200" frameborder="0"> </iframe>
+  </div>
+</div>
+<% include ./partials/footer %>

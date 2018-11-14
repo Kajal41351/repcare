@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title> </title>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+      integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pangolin"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Basic"
+      rel="stylesheet"
+    />
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="/css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <% feedback.forEach(function(feedback){ %>
+        <div class="col-md-12 border mt-4">
+          <p><%= feedback.description %></p>
+          <p class="text-right font-italic">By:<%= feedback.name %></p>
+          <p class="text-right"><%= feedback.email %></p>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </body>
+</html>

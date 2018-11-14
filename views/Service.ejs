@@ -1,493 +1,499 @@
 <% include ./partials/header %>
 <html>
-<head>
-    <link rel="stylesheet" href="css/Service.css">
+  <head>
+    <link rel="stylesheet" href="css/Service.css" />
     <script>
       $(document).ready(function() {
         $('.tabs').tabs();
       });
     </script>
+  </head>
+  <body>
+    <div class="ani"><h2>Services Offered</h2></div>
+    <br /><br />
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col l2"><a href="#test1">Test 1</a></li>
+          <li class="tab col l3"><a href="#test2">Test 2</a></li>
+          <li class="tab col l2 "><a href="#test3">test3</a></li>
+          <li class="tab col l3"><a href="#test4">Test 4</a></li>
+          <li class="tab col l2 "><a href="#test5">test 5</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="test1" class="col l12">
+      <div class="container">
+        <table border="2">
+          <tr>
+            <th>About</th>
+            <th>Image</th>
+            <th>Address</th>
+            <th>Rating</th>
+            <th>Book</th>
+          </tr>
 
-</head>
-<body>
-<div class='ani'>
-<h2>Services Offered</h2>
-</div>
-<br><br>
-<div class="row">
-  <div class="col s12">
-    <ul class="tabs">
-      <li class="tab col l2"><a href="#test1">Test 1</a></li>
-      <li class="tab col l3"><a href="#test2">Test 2</a></li>
-      <li class="tab col l2 "><a href="#test3">test3</a></li>
-      <li class="tab col l3"><a href="#test4">Test 4</a></li>
-      <li class="tab col l2 "><a href="#test5">test 5</a></li>
-    </ul>
-  </div>
-</div>
-<div id="test1" class="col l12">
-  <div class="container">
-    <table border="2">
-      <tr>
-        <th>About</th>
-        <th>Image</th>
-        <th>Address</th>
-        <th>Rating</th>
-        <th>Book</th>
-      </tr>
+          <% worker.forEach(function(worker){ %>
+          <tr>
+            <td>
+              <p>
+                <a href="/worker/<%= worker._id %>"><%= worker.name %> </a></br />
+                <%= worker.phone %> <br />
+                <%= worker.email %>
+                
+                
+              </p>
+            </td>
+            <td>
+              <img
+                src="<%= worker.image %>"
+                alt=""
+                style="width:250px;height: 200px;border: 2px solid teal"
+              />
+            </td>
+            <td><%= worker.address %></td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <% }); %>
 
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-    </table>
-  </div>
-</div>
-<div id="test2" class="col l12">
-  <div class="container">
-    <h1 class="center teal-text">
-      Results<span class="cyan-text"> page</span>
-    </h1>
-    <table border="2">
-      <tr>
-        <th>About</th>
-        <th>Image</th>
-        <th>Address</th>
-        <th>Rating</th>
-        <th>Book</th>
-      </tr>
+          <!-- <tr>
+            <td>
+              <p>
+                ashish <br />
+                5485465544 <br />
+                email.id
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                ashish <br />
+                5485465544 <br />
+                email.id
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                ashish <br />
+                5485465544 <br />
+                email.id
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr> -->
+        </table>
+      </div>
+    </div>
+    <div id="test2" class="col l12">
+      <div class="container">
+        <h1 class="center teal-text">
+          Results<span class="cyan-text"> page</span>
+        </h1>
+        <table border="2">
+          <tr>
+            <th>About</th>
+            <th>Image</th>
+            <th>Address</th>
+            <th>Rating</th>
+            <th>Book</th>
+          </tr>
 
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-    </table>
-  </div>
-</div>
-<div id="test3" class="col l12">
-  <div class="container">
-    <h1 class="center teal-text">
-      Results<span class="cyan-text"> page</span>
-    </h1>
-    <table border="2">
-      <tr>
-        <th>About</th>
-        <th>Image</th>
-        <th>Address</th>
-        <th>Rating</th>
-        <th>Book</th>
-      </tr>
+          <tr>
+            <td>
+              <p>
+                Ashish Garg <br />
+                9485465544 <br />
+                ashish@gmail.com
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Vinod nagar,Delhi</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                Ambika Yadav <br />
+                9445684655<br />
+                ambika@gmail.com
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Uttam Nagar,Delhi</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                Kajal Gupta<br />
+                9543465500 <br />
+                kajal@gmail.com
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Shastri Park,Delhi</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                Diksha Sethi <br />
+                9834562435<br />
+                diksha@gmail.com
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Rohini,Delhi</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="test3" class="col l12">
+      <div class="container">
+        <h1 class="center teal-text">
+          Results<span class="cyan-text"> page</span>
+        </h1>
+        <table border="2">
+          <tr>
+            <th>About</th>
+            <th>Image</th>
+            <th>Address</th>
+            <th>Rating</th>
+            <th>Book</th>
+          </tr>
 
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-    </table>
-  </div>
-</div>
-<div id="test4" class="col l12">
-  <div class="container">
-    <h1 class="center teal-text">
-      Results<span class="cyan-text"> page</span>
-    </h1>
-    <table border="2">
-      <tr>
-        <th>About</th>
-        <th>Image</th>
-        <th>Address</th>
-        <th>Rating</th>
-        <th>Book</th>
-      </tr>
+          <tr>
+            <td>
+              <p>
+                Mohit Jain <br />
+                7685746737 <br />
+                mohit@gmail.com
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Seelampur,Delhi</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                Faizz Ahmad <br />
+                9562314587 <br />
+                faiz@gmail.com
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Hasanpur,Delhi</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                Gauri Jain<br />
+                9632587415 <br />
+                gauri@gmail.com
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Sahadra,Delhi</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                Kunal Dixit <br />
+                9087568974 <br />
+                kunal@gmail.com
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Khora,Delhi</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="test4" class="col l12">
+      <div class="container">
+        <h1 class="center teal-text">
+          Results<span class="cyan-text"> page</span>
+        </h1>
+        <table border="2">
+          <tr>
+            <th>About</th>
+            <th>Image</th>
+            <th>Address</th>
+            <th>Rating</th>
+            <th>Book</th>
+          </tr>
 
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-    </table>
-  </div>
-</div>
-<div id="test5" class="col l12">
-  <div class="container">
-    <h1 class="center teal-text">
-      Results<span class="cyan-text"> page</span>
-    </h1>
-    <table border="2">
-      <tr>
-        <th>About</th>
-        <th>Image</th>
-        <th>Address</th>
-        <th>Rating</th>
-        <th>Book</th>
-      </tr>
+          <tr>
+            <td>
+              <p>
+                ashish <br />
+                5485465544 <br />
+                email.id
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                ashish <br />
+                5485465544 <br />
+                email.id
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                ashish <br />
+                5485465544 <br />
+                email.id
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                ashish <br />
+                5485465544 <br />
+                email.id
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="test5" class="col l12">
+      <div class="container">
+        <h1 class="center teal-text">
+          Results<span class="cyan-text"> page</span>
+        </h1>
+        <table border="2">
+          <tr>
+            <th>About</th>
+            <th>Image</th>
+            <th>Address</th>
+            <th>Rating</th>
+            <th>Book</th>
+          </tr>
 
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            ashish <br />
-            5485465544 <br />
-            email.id
-          </p>
-        </td>
-        <td>
-          <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
-        </td>
-        <td>Lorem ipsum dolor sit amet.</td>
-        <td>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star"></i><i class="fas fa-star"></i
-          ><i class="fas fa-star-half"></i>
-        </td>
-        <td><a class="btn" href="/secret">Book Now</a></td>
-      </tr>
-    </table>
-  </div>
-</div>
-</body>
+          <tr>
+            <td>
+              <p>
+                ashish <br />
+                5485465544 <br />
+                email.id
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                ashish <br />
+                5485465544 <br />
+                email.id
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                ashish <br />
+                5485465544 <br />
+                email.id
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                ashish <br />
+                5485465544 <br />
+                email.id
+              </p>
+            </td>
+            <td>
+              <img src="img/g2.png" alt="" style="width:250px;height: 200px" />
+            </td>
+            <td>Lorem ipsum dolor sit amet.</td>
+            <td>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star-half"></i>
+            </td>
+            <td><a class="btn" href="/secret">Book Now</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
 </html>
 
 <% include ./partials/footer %>

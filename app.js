@@ -4,9 +4,12 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   User = require('./models/user'),
   LocalStrategy = require('passport-local'),
+  Worker = require('./models/worker'),
+  Worker1 = require('./models/worker1'),
+  Comment = require('./models/comment'),
   passportLocalMongoose = require('passport-local-mongoose'),
   app = express();
-mongoose.connect('mongodb://localhost/auth_demo_app');
+mongoose.connect('mongodb://localhost/auth_demo_app16');
 const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
@@ -42,6 +45,12 @@ var campgroundSchema = new mongoose.Schema({
 
 var Campground = mongoose.model('Campground', campgroundSchema);
 
+var feedbackSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  description: String
+});
+var Feedback = mongoose.model('Feedback', feedbackSchema);
 app.get('/repcare/request', function(req, res) {
   // Get all campgrounds from DB
   Campground.find({}, function(err, allCampgrounds) {
@@ -74,11 +83,42 @@ app.post('/request', function(req, res) {
       console.log(err);
     } else {
       //redirect back to campgrounds page
-      res.redirect('/repcare');
+      res.redirect('/success');
     }
   });
 });
+//CREATE - add new feedback to DB
+app.post('/feedback', function(req, res) {
+  // get data from form and add to campgrounds array
+  var name = req.body.name;
+  var email = req.body.email;
+  var desc = req.body.description;
 
+  var newFeedback = {
+    name: name,
+    email: email,
+    description: desc
+  };
+  // Create a new campground and save to DB
+  Feedback.create(newFeedback, function(err, newlyCreated) {
+    if (err) {
+      console.log(err);
+    } else {
+      //redirect back to campgrounds page
+      res.redirect('/test');
+    }
+  });
+});
+app.get('/repcare/feedback', function(req, res) {
+  // Get all campgrounds from DB
+  Feedback.find({}, function(err, allFeedback) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('feedback', { feedback: allFeedback });
+    }
+  });
+});
 //============
 // ROUTES
 //============
@@ -90,7 +130,9 @@ app.get('/', function(req, res) {
 app.get('/secret', isLoggedIn, function(req, res) {
   res.render('req.ejs');
 });
-
+app.get('/success', isLoggedIn, function(req, res) {
+  res.render('success.ejs');
+});
 // Auth Routes
 
 //handling user sign up
@@ -102,10 +144,11 @@ app.post('/signup', function(req, res) {
       if (err) {
         console.log(err);
         return res.render('signup');
+      } else {
+        passport.authenticate('local')(req, res, function() {
+          res.redirect('/repcare');
+        });
       }
-      passport.authenticate('local')(req, res, function() {
-        res.redirect('/repcare');
-      });
     }
   );
 });
@@ -168,10 +211,10 @@ app.get('/home', function(req, res) {
   res.render('home');
 });
 
-//Service routes
-app.get('/Service', function(req, res) {
-  res.render('Service');
-});
+// //Service routes
+// app.get('/Service', function(req, res) {
+//   res.render('Service');
+// });
 
 //Gallery routes
 app.get('/Gallery', function(req, res) {
@@ -190,6 +233,111 @@ app.get('/Signup', function(req, res) {
 //Testimonials routes
 app.get('/Test', function(req, res) {
   res.render('Test');
+});
+//CREATE - add new campground to DB
+app.post('/campgrounds', function(req, res) {
+  // get data from form and add to campgrounds array
+  var name = req.body.name;
+  var image = req.body.image;
+  var address = req.body.address;
+  var phone = req.body.phone;
+  var email = req.body.email;
+  var newCampground = {
+    name: name,
+    image: image,
+    address: address,
+    phone: phone,
+    email: email
+  };
+  // Create a new campground and save to DB
+  Worker.create(newCampground, function(err, newlyCreated) {
+    if (err) {
+      console.log(err);
+    } else {
+      //redirect back to campgrounds page
+      res.redirect('/Service');
+    }
+  });
+});
+//NEW - show form to create new campground
+app.get('/worker/new', function(req, res) {
+  res.render('new');
+});
+
+//INDEX - show all worker
+app.get('/Service', function(req, res) {
+  // Get all worker from DB
+  Worker.find({}, function(err, allCampgrounds) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('Service', { worker: allCampgrounds });
+    }
+  });
+});
+
+// SHOW - shows more info about one campground
+app.get('/worker/:id', function(req, res) {
+  //find the campground with provided ID
+  Worker.findById(req.params.id)
+    .populate('comments')
+    .exec(function(err, foundCampground) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(foundCampground);
+        //render show template with that campground
+        res.render('show', { worker: foundCampground });
+      }
+    });
+});
+
+// ====================
+// COMMENTS ROUTES
+// ====================
+
+app.get('/worker/:id/comments/new', function(req, res) {
+  // find campground by id
+  Worker.findById(req.params.id, function(err, campground) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('new1', { worker: campground });
+    }
+  });
+});
+
+app.post('/worker/:id/comments', function(req, res) {
+  //lookup campground using ID
+  Worker.findById(req.params.id, function(err, worker) {
+    if (err) {
+      console.log(err);
+      res.redirect('/');
+    } else {
+      Comment.create(req.body.comment, function(err, comment) {
+        if (err) {
+          console.log(err);
+        } else {
+          // worker.comments.push(comment);
+          // worker.save();
+          res.redirect('/worker/' + worker._id);
+        }
+      });
+    }
+  });
+  //create new comment
+  //connect new comment to campground
+  //redirect campground show page
+});
+app.get('/comment', function(req, res) {
+  // Get all campgrounds from DB
+  Comment.find({}, function(err, allFeedback) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('newcomment', { comment: allFeedback });
+    }
+  });
 });
 
 //listening to port

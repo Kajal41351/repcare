@@ -2,29 +2,44 @@
 
 
 <div class="row text-center" style="display:flex; flex-wrap: wrap;">
-    <% campgrounds.forEach(function(campground){ %>
-    <div class="col-md-3 col-sm-6">
-        <h4>
-            <%= campground.name %>
-        </h4>
-        <h4>
-            <%= campground.phone %>
-        </h4>
-        <h4>
-            <%= campground.mecname %>
-        </h4>
-        <h4>
-            <%= campground.problem %>
-        </h4>
-        <h4>
-            <%= campground.description %>
-        </h4>
+    
+        <div class="container">
+                <table border="2">
+                  <tr>
+                    <th>Customer Name</th>
+                    
+                    <th>Phone no</th>
+                    <th>Problem</th>
+                    <th>Description</th>
+                    <th>Mechname</th>
+                  </tr>
+        
+                  <% campgrounds.forEach(function(campground){ %> 
+                  <tr>
+                    <td>
+                      <p>
+                       <%= campground.name %>
+                       
+                       
+                        
+                        
+                      </p>
+                    </td>
+                <td><p><%= campground.phone %></p></td>
+                    <td><%= campground.problem %></td>
+                    <td>
+                      <p><%= campground.description %></p>
+                    </td>
+                    <td> <%= campground.mecname %></td>
+                  </tr>
+                  <% }); %>
+        
+            
+                </table>
+              </div>
+            </div>
+    
 
-
-
-    </div>
-</div>
-<% }); %>
 </div>
 </div>
 
