@@ -11,7 +11,8 @@
                     <th>Phone no</th>
                     <th>Problem</th>
                     <th>Description</th>
-                    <th>Mechname</th>
+                    <th>Worker name</th>
+                    <th>Category</th>
                   </tr>
         
                   <% campgrounds.forEach(function(campground){ %> 
@@ -31,7 +32,9 @@
                       <p><%= campground.description %></p>
                     </td>
                     <td> <%= campground.mecname %></td>
-                  </tr>
+                  
+                <td> <%= campground.category %></td>
+              </tr>
                   <% }); %>
         
             

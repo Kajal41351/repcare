@@ -40,7 +40,8 @@ var campgroundSchema = new mongoose.Schema({
   phone: String,
   description: String,
   mecname: String,
-  problem: String
+  problem: String,
+  category: String
 });
 
 var Campground = mongoose.model('Campground', campgroundSchema);
@@ -70,14 +71,17 @@ app.post('/request', function(req, res) {
   var desc = req.body.description;
   var problem = req.body.problem;
   var mecname = req.body.mecname;
+  var category = req.body.category;
   var newCampground = {
     name: name,
     phone: phone,
     description: desc,
     problem: problem,
-    mecname: mecname
+    mecname: mecname,
+    category: category
   };
   // Create a new campground and save to DB
+
   Campground.create(newCampground, function(err, newlyCreated) {
     if (err) {
       console.log(err);
@@ -127,9 +131,19 @@ app.get('/', function(req, res) {
   res.render('landing.ejs');
 });
 
-app.get('/secret', isLoggedIn, function(req, res) {
-  res.render('req.ejs');
+app.get('/secret', function(req, res) {
+  res.render('req1.ejs');
 });
+app.get('/secret/:id', isLoggedIn, function(req, res) {
+  Worker.findById(req.params.id, function(err, allCampgrounds) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('req', { worker: allCampgrounds });
+    }
+  });
+});
+
 app.get('/success', isLoggedIn, function(req, res) {
   res.render('success.ejs');
 });
@@ -182,7 +196,7 @@ app.post(
 
 app.get('/logout', function(req, res) {
   req.logout();
-  res.redirect('/');
+  res.redirect('/repcare');
 });
 
 function isLoggedIn(req, res, next) {
@@ -230,9 +244,13 @@ app.get('/Signup', function(req, res) {
   res.render('Signup');
 });
 
-//Testimonials routes
+//Write to us routes
 app.get('/Test', function(req, res) {
   res.render('Test');
+});
+//Testimonials routes
+app.get('/testimonials', function(req, res) {
+  res.render('testimonials');
 });
 //CREATE - add new campground to DB
 app.post('/campgrounds', function(req, res) {

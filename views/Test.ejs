@@ -7,15 +7,15 @@
           <form action="/feedback" method="POST">
               <div class="form-group">
                 <label for="username" class="text-light mt-2 ml-4">Your Name:</label>
-                <input type="name" class="form-control ml-4" name="name" placeholder="Enter your name" style="width:80%;">
+                <input type="name" class="form-control ml-4" name="name" placeholder="Enter your name" style="width:80%;" required>
               </div>
               <div class="form-group">
                     <label for="email" class="text-light mt-2 ml-4" >Your Email:</label>
-                    <input class="form-control ml-4 white"  placeholder="Enter email" name="email" style="width:80%;">
+                    <input type='email' class="form-control ml-4 white"  placeholder="Enter email" name="email" style="width:80%;" required>
                   </div>
               <div class="form-group">
                   <label class="text-light mt-2 ml-4"">Feedback:</label>
-                  <textarea class="form-control ml-4" rows="5" name="description" placeholder="Drop your text here and post it." style="width:80%;"></textarea>
+                  <textarea class="form-control ml-4" rows="5" name="description" placeholder="Drop your text here and post it." style="width:80%;" required></textarea>
               </div>
               <div class="form-group center mr-5">
                 <button type="submit" class="btn  btn-outline-light mt-2 ml-4 mb-3">Post</button>

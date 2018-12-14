@@ -10,6 +10,7 @@
             type="text"
             name="name"
             placeholder="name"
+            required
           />
         </div>
         <div class="form-group">
@@ -18,6 +19,9 @@
             type="text"
             name="phone"
             placeholder="phone no"
+            maxlength="10"
+            minlength="10"
+            required
           />
         </div>
         <div class="form-group">
@@ -25,16 +29,30 @@
             class="form-control"
             type="text"
             name="mecname"
-            placeholder="mechanic name"
+            value="<%= worker.name %>"
           />
         </div>
         <div class="form-group">
-          <input
-            class="form-control"
-            type="text"
-            name="problem"
-            placeholder="problem"
-          />
+          <select class="form-control" name="problem">
+            <option>Select Problem</option>
+            <option>Microwave</option>
+            <option>Oven</option>
+            <option>AC</option>
+            <option>Geyser</option>
+            <option>TV</option>
+            <option>Fridge</option>
+            <option>Washing Machine</option>
+            <option>Others</option>
+          </select>
+          <!--
+            <input
+              class="form-control"
+              type="text"
+              name="problem"
+              placeholder="problem"
+              required
+            />
+          -->
         </div>
         <div class="form-group">
           <input
@@ -42,18 +60,21 @@
             type="text"
             name="description"
             placeholder=" problem description"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            name="category"
+            placeholder=" category"
+            required
           />
         </div>
 
         <div class="form-group">
-          <button
-            class="btn btn-lg btn-primary btn-block"
-            <!--
-            onclick="M.toast({html: 'Booking Successful'})"
-            --
-          >
-            > Submit!
-          </button>
+          <button class="btn btn-lg btn-primary btn-block">Submit!</button>
         </div>
       </form>
       <a href="/repcare">Go Back</a>

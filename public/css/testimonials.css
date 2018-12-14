@@ -1,0 +1,81 @@
+body{
+  background: url(/img/Test2.png);
+  background-size: contain;
+  }
+center{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+@keyframes example{
+  from{left: 100%;}
+  to{left: 0%;}
+
+}
+@keyframes example1{
+  from{left: -100%;}
+  to{left: 0%;}
+
+}
+
+.test1{
+    background-color: lightgrey;
+    height : 35%;
+    width : 55%;
+    font-style: oblique;
+    margin-left: 2%;
+    border: 5px solid black;
+    animation-name: example;
+    animation-duration: 15s;
+    position : relative;
+    font-size: 26;
+    }
+.test2{
+    background-color: aquamarine;
+    height : 37%;
+    width : 55%;
+    font-style: oblique;
+    margin-left: 43%;
+    border: 5px solid black;
+    animation-name: example1;
+    animation-duration: 15s;
+    position : relative;
+    font-size: 26;
+}
+.test3{
+    background-color : mediumslateblue;
+    height :44%;
+    width : 55%;
+    font-style: oblique;
+    margin-left: 2%;
+    border: 5px solid black;
+    animation-name: example;
+    animation-duration: 15s;
+    position : relative;
+    font-size: 26;
+}
+.test4{
+    background-color : mediumorchid;
+    height : 35%;
+    width : 55%;
+    font-style: oblique;
+    margin-left: 43%;
+    border: 5px solid black;
+    animation-name: example1;
+    animation-duration: 15s;
+    position : relative;
+    font-size: 26;
+}
+
+.test5{
+    background-color : pink;
+    height : 35%;
+    width : 55%;
+    font-style: oblique;
+    margin-left: 2%;
+    border: 5px solid black;
+    animation-name: example;
+    animation-duration: 15s;
+    position : relative;
+    font-size: 26;
+}

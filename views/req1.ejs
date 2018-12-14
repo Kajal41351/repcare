@@ -1,0 +1,86 @@
+<% include partials/header %>
+<div class="container">
+  <div class="row">
+    <h1 style="text-align: center">Made Your Request</h1>
+    <div style="width: 30%; margin: 25px auto;">
+      <form action="/request" method="POST">
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            name="name"
+            placeholder="name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            name="phone"
+            placeholder="phone no"
+            maxlength="10"
+            minlength="10"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            name="mecname"
+            placeholder="worker name"
+          />
+        </div>
+        <div class="form-group">
+          <select>
+            <option>Microwave</option>
+            <option>Oven</option>
+            <option>AC</option>
+            <option>Geyser</option>
+            <option>TV</option>
+            <option>Fridge</option>
+            <option>Washing Machine</option>
+            <option>Others</option>
+          </select>
+          <input
+            class="form-control"
+            type="text"
+            name="problem"
+            placeholder="problem"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            name="description"
+            placeholder=" problem description"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            name="category"
+            placeholder=" category"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+        </div>
+      </form>
+      <a href="/repcare">Go Back</a>
+    </div>
+  </div>
+</div>
+<!--
+  <script>
+    M.toast({ html: 'Booking Successful!' });
+  </script>
+-->
+<% include partials/footer %>
